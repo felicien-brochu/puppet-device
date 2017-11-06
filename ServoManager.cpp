@@ -8,4 +8,5 @@ ServoManager::ServoManager() {
 
 void ServoManager::consumeCommand(PositionCommand *command) {
 	_driver.setPWM(command->servoId, 0, command->p);
+	delete command;
 }
